@@ -9,8 +9,8 @@ const App = () => {
       errorElement: <Page.Error />,
     },
     {
-      path: '/user',
-      element: <UserList />,
+      path: '/user/:id',
+      element: <Page.UserProfile />,
       errorElement: <Page.Error />,
     },
   ]);
