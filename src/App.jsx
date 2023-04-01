@@ -18,8 +18,10 @@ const App = () => {
 
   return (
     <>
-      <Comp.Header />
-      <RouterProvider router={router} />
+      <section className=" container">
+        <Comp.Header />
+        <RouterProvider router={router} />
+      </section>
       <Comp.Footer />
     </>
   );
