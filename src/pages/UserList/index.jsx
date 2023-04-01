@@ -1,27 +1,25 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import * as Comp from '../../components';
+import * as hooks from '../../hooks';
 
 export const UserList = () => {
+  const [skip, setSkip] = useState(0);
+  const [limit, setLimit] = useState(10);
+
+  const { users, error } = hooks.useUsers({ skip, limit });
+
   return (
     <>
-      <li>
-        <Link to="/user/1">User 1</Link>
-      </li>
+      <h1>List of All the Users</h1>
 
-      <li>
-        <Link to="/user/2">User 2</Link>
-      </li>
-
-      <li>
-        <Link to="/user/3">User 3</Link>
-      </li>
-
-      <li>
-        <Link to="/user/4">User 4</Link>
-      </li>
-
-      <li>
-        <Link to="/user/5">User 5</Link>
-      </li>
+      <ul>
+        {users &&
+          users.map((user) => (
+            <li key={user.id}>
+              <Comp.UserCard {...user} />
+            </li>
+          ))}
+      </ul>
     </>
   );
 };
