@@ -30,7 +30,7 @@ export const UserList = () => {
             data-te-select-init
             defaultValue={limit}
             className=" cursor-pointer"
-            onChange={(ev) => setLimit(ev.target.value)}
+            onChange={(ev) => setLimit(Number(ev.target.value))}
           >
             <option value={5}>5</option>
             <option value={10}>10</option>
@@ -52,7 +52,7 @@ export const UserList = () => {
 
       <div className="flex justify-center items-center space-x-12 py-6">
         <button
-          className="flex items-center px-4 py-2 text-gray-500 bg-gray-300 rounded-md"
+          className="px-4 py-2 text-gray-500 bg-gray-300 rounded-md hover:bg-blue-400 hover:text-white disabled:cursor-not-allowed disabled:bg-gray-200 disabled:text-slate-400"
           disabled={skip === 0}
           onClick={() => {
             setSkip(skip - limit);
@@ -75,8 +75,8 @@ export const UserList = () => {
         </button>
 
         <button
-          className="px-4 py-2 text-gray-500 bg-gray-300 rounded-md hover:bg-blue-400 hover:text-white"
-          disabled={skip === 90}
+          className="px-4 py-2 text-gray-500 bg-gray-300 rounded-md hover:bg-blue-400 hover:text-white disabled:cursor-not-allowed disabled:bg-gray-200 disabled:text-slate-400"
+          disabled={skip >= 90}
           onClick={() => {
             setSkip(skip + limit);
           }}

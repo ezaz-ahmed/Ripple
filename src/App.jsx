@@ -5,7 +5,7 @@ import * as Comp from './components';
 const App = () => {
   return (
     <>
-      <section className=" container">
+      <section className=" container min-h-screen">
         <Comp.Header />
 
         <Routes>

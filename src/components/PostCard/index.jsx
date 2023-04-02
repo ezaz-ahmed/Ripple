@@ -4,8 +4,9 @@ export const PostCard = ({ title, reactions, body, tags }) => {
       <div className="block rounded-xl bg-white p-4 sm:p-6 lg:p-8">
         <div className=" flex justify-between items-center">
           <div className=" flex">
-            {tags.map((tag) => (
+            {tags.map((tag, i) => (
               <div
+                key={i}
                 data-te-chip-init
                 data-te-ripple-init
                 className="[word-wrap: break-word] my-[5px] mr-4 flex h-[32px] cursor-pointer items-center justify-between rounded-[16px] py-0 text-lg font-normal normal-case leading-loose shadow-none transition-[opacity] duration-300 ease-linear hover:!shadow-none"

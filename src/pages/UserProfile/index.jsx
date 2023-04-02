@@ -18,10 +18,14 @@ export const UserProfile = () => {
   }
 
   return (
-    <div className=" grid gap-4">
-      {posts.map((post) => (
-        <PostCard key={post.id} {...post} />
-      ))}
-    </div>
+    <section>
+      <Comp.Profile />
+
+      <div className=" grid gap-4 py-6">
+        {posts.map((post) => (
+          <PostCard key={post.id} {...post} />
+        ))}
+      </div>
+    </section>
   );
 };
