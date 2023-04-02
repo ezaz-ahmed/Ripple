@@ -22,4 +22,4 @@ npm start
 ```
 
 # Author
-[Ezaz Ahmed]: https://github.com/ezaz-ahmed
+[Ezaz Ahmed](https://github.com/ezaz-ahmed)
