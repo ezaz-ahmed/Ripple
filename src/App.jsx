@@ -1,4 +1,4 @@
-import { RouterProvider, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import * as Page from './pages';
 import * as Comp from './components';
 
@@ -9,17 +9,11 @@ const App = () => {
         <Comp.Header />
 
         <Routes>
-          <Route
-            path="/"
-            element={<Page.UserList />}
-            errorElement={<Page.Error />}
-          />
+          <Route exact path="/" element={<Page.UserList />} />
 
-          <Route
-            path="/user/:id"
-            element={<Page.UserProfile />}
-            errorElement={<Page.Error />}
-          />
+          <Route exact path="/user/:id" element={<Page.UserProfile />} />
+
+          <Route path="*" element={<Page.NotFound />} />
         </Routes>
       </section>
       <Comp.Footer />

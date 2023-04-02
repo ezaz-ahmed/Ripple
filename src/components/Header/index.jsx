@@ -8,7 +8,10 @@ export const Header = () => {
       </h3>
 
       <p className=" font-thin text-base">
-        By <span className=" italic">Code Rex</span>
+        By{' '}
+        <a href="https://www.coderex.co/" target="_blank" className=" italic">
+          Code Rex
+        </a>
       </p>
     </nav>
   );

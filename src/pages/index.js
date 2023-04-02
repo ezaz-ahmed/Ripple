@@ -1,3 +1,3 @@
 export { UserList } from './UserList';
 export { UserProfile } from './UserProfile';
-export { Error } from './Error';
+export { NotFound } from './NotFound';

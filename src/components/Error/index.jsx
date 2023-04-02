@@ -1,22 +1,32 @@
-export const Error = ({ message }) => {
+export const Error = () => {
   return (
-    <div
-      className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
-      role="alert"
-    >
-      <strong className="font-bold">Something seriously bad happened!</strong>
-      <span className="block sm:inline">{message}</span>
-      <span className="absolute top-0 bottom-0 right-0 px-4 py-3">
-        <svg
-          className="fill-current h-6 w-6 text-red-500"
-          role="button"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-        >
-          <title>Close</title>
-          <path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
-        </svg>
-      </span>
+    <div className="flex h-[calc(100vh-80px)] items-center justify-center p-5 bg-white w-full">
+      <div className="text-center">
+        <div className="inline-flex rounded-full bg-yellow-100 p-4">
+          <div className="rounded-full stroke-yellow-600 bg-yellow-200 p-4">
+            <svg
+              className="w-16 h-16"
+              viewBox="0 0 28 28"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.0002 9.33337V14M14.0002 18.6667H14.0118M25.6668 14C25.6668 20.4434 20.4435 25.6667 14.0002 25.6667C7.55684 25.6667 2.3335 20.4434 2.3335 14C2.3335 7.55672 7.55684 2.33337 14.0002 2.33337C20.4435 2.33337 25.6668 7.55672 25.6668 14Z"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <h1 className="mt-5 text-[36px] font-bold text-slate-800 lg:text-[50px]">
+          404 - Component not found
+        </h1>
+        <p className="text-slate-600 mt-5 lg:text-lg">
+          The page you are looking for doesn't exist or <br />
+          has been removed.
+        </p>
+      </div>
     </div>
   );
 };

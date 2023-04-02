@@ -6,12 +6,12 @@ export const UserCard = ({ id, firstName, lastName, email, company }) => {
       <div className="rounded-2xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1 shadow-xl">
         <div className="flex justify-between space-x-2 items-center rounded-xl bg-white p-4 sm:p-6 lg:p-8">
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium  truncate ">
+            <p className="text-2xl font-medium  truncate ">
               {firstName} {lastName}
             </p>
             <p className="text-sm truncate ">{email}</p>
           </div>
-          <div className="inline-flex items-center text-base font-semibold ">
+          <div className="inline-flex items-center text-base ">
             <p>{company.name}</p>
           </div>
         </div>

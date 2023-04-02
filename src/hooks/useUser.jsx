@@ -5,7 +5,6 @@ export const useUser = ({ userId }) => {
   const [user, setUser] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-  const [error, setError] = useState(null);
 
   const getPosts = async () => {
     const response = await fetch(`https://dummyjson.com/users/${userId}/posts`);
@@ -25,17 +24,17 @@ export const useUser = ({ userId }) => {
       throw new Error('Failed to fetch user details');
     }
 
-    const data = await response.json();
-    return data.user;
+    return await response.json();
   };
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
         setIsLoading(true);
+
         const [posts, user] = await Promise.all([getPosts(), getUser()]).catch(
           (err) => {
-            throw new Error(err.messages);
+            throw new Error(err.message);
           }
         );
 
@@ -44,7 +43,6 @@ export const useUser = ({ userId }) => {
         setIsLoading(false);
       } catch (error) {
         setIsError(true);
-        setError(error);
         setIsLoading(false);
       }
     };
@@ -52,5 +50,5 @@ export const useUser = ({ userId }) => {
     fetchPosts(userId);
   }, []);
 
-  return { posts, user, isLoading, isError, error };
+  return { posts, user, isLoading, isError };
 };

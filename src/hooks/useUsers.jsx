@@ -4,7 +4,6 @@ export const useUsers = ({ limit, skip }) => {
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -21,7 +20,6 @@ export const useUsers = ({ limit, skip }) => {
         setUsers(data.users);
         setIsLoading(false);
       } catch (error) {
-        setError(error);
         setIsError(true);
         setIsLoading(false);
       }
@@ -30,5 +28,5 @@ export const useUsers = ({ limit, skip }) => {
     fetchUsers();
   }, [skip, limit]);
 
-  return { users, isLoading, isError, error };
+  return { users, isLoading, isError };
 };

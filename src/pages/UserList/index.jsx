@@ -7,22 +7,18 @@ export const UserList = () => {
   const [skip, setSkip] = useState(0);
   const [limit, setLimit] = useState(10);
 
-  const { users, isLoading, isError, error } = hooks.useUsers({ skip, limit });
+  const { users, isLoading, isError } = hooks.useUsers({ skip, limit });
 
   if (isLoading) {
     return <Comp.Loading />;
   }
 
-  if (isError) {
-    return <Comp.Error message={error} />;
-  }
-
-  console.log(skip);
-
-  return (
+  return isError ? (
+    <Comp.Error />
+  ) : (
     <>
       <div className=" flex justify-between items-center w-full py-6">
-        <h1 className=" text-4xl pb-4">List of All the Users</h1>
+        <h1 className=" text-xl font-bold pb-4"> List of all the users </h1>
 
         <label htmlFor={selectId}>
           Show at a time:
