@@ -7,7 +7,9 @@ export const Header = () => {
         <Link to="/">React Dev Coding Assessment</Link>
       </h3>
 
-      <span className=" font-thin text-base">By Code Rex</span>
+      <p className=" font-thin text-base">
+        By <span className=" italic">Code Rex</span>
+      </p>
     </nav>
   );
 };

@@ -8,13 +8,11 @@ export const UserProfile = () => {
 
   const { posts, error } = hooks.useUser({ userId: id });
 
-  console.log(posts);
-
   return (
-    <ul>
+    <div className=" grid gap-4">
       {posts.map((post) => (
         <PostCard key={post.id} {...post} />
       ))}
-    </ul>
+    </div>
   );
 };

@@ -10,7 +10,7 @@ export const UserList = () => {
 
   return (
     <>
-      <h1>List of All the Users</h1>
+      <h1 className=" text-4xl pb-4">List of All the Users</h1>
 
       <ul>
         {users &&
