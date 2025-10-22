@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment variables
+.env
+.env.*      
+! .env.example  
+
+# Byte-compiled / cache
+*.egg-info/
+dist/
+build/
+
+# Logs
+*.log
+logs/
+*.pid
+
+# Database and backups
+*.db
+*.sqlite
+*.sql
+
+# Docker
+*.pid
+*.seed
+docker-compose.override.yml
+.docker/
+
+# Coverage / testing
+htmlcov/
+.coverage
+.pytest_cache/
+nosetests.xml
+coverage.xml
+
+# OS Files
+.DS_Store
+Thumbs.db
